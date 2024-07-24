@@ -1,0 +1,8 @@
+<div class="c-status-order"
+    [class.c-status-order__pendent]="data === status.PENDENTE"
+    [class.c-status-order__done]="data === status.PRONTO"
+    [class.c-status-order__preparation]="data === status.PREPARACAO"
+    [class.c-status-order__delivered]="data === status.ENTREGUE"
+>
+    <span class="c-status-order__label">{{ data }}</span>
+</div>

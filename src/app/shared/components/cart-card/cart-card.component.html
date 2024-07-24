@@ -1,0 +1,17 @@
+<div class="c-cart-card">
+    <div class="c-cart-card__content">
+        <img [src]="data.image" alt="food-image" class="c-cart-card__content--image">
+        
+        <div class="wrapper">
+            
+            <div class="wrapper__body">
+                <span class="wrapper__body--title">{{ data.title  }}</span>
+                <span class="wrapper__body--description">{{ data.description }}</span>
+                <span class="wrapper__body--price">{{ data.price | currency: 'BRL' }}</span>
+            </div>
+
+            <img class="wrapper__icon" src="assets/icons/trash.svg" alt="icon-trash" (click)="onDelete()">
+        </div>
+
+    </div>
+</div>

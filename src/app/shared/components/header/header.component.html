@@ -1,0 +1,14 @@
+<div class="c-header">
+    <div class="c-header__logo">
+        <img src="assets/logo/singu.png" alt="logo-image" class="c-header__logo--image">
+    </div>
+
+    <div class="menu">
+        <ng-container *ngFor="let menu of menuList">
+            <div class="menu__item" (click)="onSelectMenu(menu)">
+                <span class="menu__item--label" [style.color]="menu.selected ? 'var(--singu-primary)' : ' var(--singu-white)' ">{{ menu.label }}</span>
+            </div>
+        </ng-container>
+     
+    </div>
+</div>

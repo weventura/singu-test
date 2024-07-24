@@ -1,0 +1,99 @@
+.c-home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 56px;
+
+  &__actions {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+
+    &--search {
+      width: 100%;
+      height: 48px;
+      border-radius: 8px;
+      background-color: var(--singu-opacity);
+      outline: none;
+      border: none;
+      color: var(--singu-white);
+      font-size: 20px;
+      padding-left: 16px;
+    }
+
+    &--cart {
+      width: 150px;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+}
+
+.c-cart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 16px;
+
+  &__header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    &--clear {
+      width: 120px;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    height: calc(100vh - 250px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    padding-right: 8px;
+    overflow-y: auto;
+  }
+
+  .c-cart__list::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  .c-cart__list::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .c-cart__list::-webkit-scrollbar-thumb {
+    border-radius: 24px;
+    border: 3px solid var(--singu-gray-300);
+  }
+
+  &__footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 24px 0;
+    gap: 24px;
+
+    &--action {
+      width: 150px;
+    }
+  }
+}

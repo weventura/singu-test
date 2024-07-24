@@ -1,0 +1,25 @@
+.c-status-order {
+  width: 120px;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+
+  &__pendent {
+    background-color: var(--singu-yellow-100);
+  }
+
+  &__done {
+    background-color: var(--singu-blue-100);
+  }
+
+  &__preparation {
+    background-color: var(--singu-orange-100);
+  }
+
+  &__delivered {
+    background-color: var(--singu-green-100);
+  }
+}

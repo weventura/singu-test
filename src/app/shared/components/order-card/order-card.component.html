@@ -1,0 +1,15 @@
+<div class="c-order-card">
+    <div class="c-order-card__content">
+        <img [src]="data.image" alt="food-image" class="c-order-card__content--image">
+        
+        <div class="wrapper">
+            <span class="wrapper__title">{{ data.title }}</span>
+            <span class="wrapper__description">{{ data.description }}</span>
+
+            <div class="wrapper__price">
+                <span class="wrapper__price--value">{{ data.price | currency: 'BRL' }}</span>
+            </div>
+        </div>
+
+    </div>
+</div>

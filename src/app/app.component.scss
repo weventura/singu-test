@@ -1,0 +1,11 @@
+.c-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 56px;
+
+  &__content {
+    width: 80%;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,34 @@
+<div class="c-orders">
+    <div class="c-orders__actions">
+        <button class="c-orders__actions--cart o-button-light" (click)="onClearOrders()">Limpar itens</button>
+    </div>
+
+    <div class="c-orders__list">
+        <ng-container *ngIf="orders.length > 0; then list; else emptyState"></ng-container>
+    </div>
+    
+</div>
+
+<ng-template #list>
+
+    <ng-container *ngFor="let order of orders">
+        <div class="c-orders__list--box">
+            <div class="order-item">
+                <div class="order-item__header">
+                    <span class="order-item__header--number"><strong>Pedido:</strong> {{ order.id }}</span>
+        
+                    <singu-status-order [data]="order.status"></singu-status-order>
+                </div>
+            </div>
+    
+            <ng-container *ngFor="let item of order.itens">
+                <singu-order-card [data]="item"></singu-order-card>
+            </ng-container>
+        </div>
+    </ng-container>
+
+</ng-template>
+
+<ng-template #emptyState>
+    <singu-empty-state [description]="'Nenhum item encontrado.'"></singu-empty-state>
+</ng-template>

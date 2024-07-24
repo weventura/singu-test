@@ -1,0 +1,64 @@
+.c-order-card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  background-color: var(--singu-opacity);
+  border-radius: 8px;
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding-right: 16px;
+
+    &--image {
+      width: 100px;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+
+    .wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &__title {
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--singu-white);
+      }
+
+      &__description {
+        width: 50ch;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--singu-gray-500);
+      }
+
+      &__price {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        &--value {
+          font-size: 20px;
+          font-weight: 500;
+          color: var(--singu-white);
+        }
+
+        &--add {
+          width: 100px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@import "./app/theme/colors.scss";
+@import "./app/theme/buttons.scss";
+
+body {
+  font-family: "Roboto Mono", monospace;
+  background-color: var(--singu-background);
+}
