@@ -1,0 +1,16 @@
+<div class="c-card-food">
+    <div class="c-card-food__content">
+        <img [src]="data.image" alt="food-image" class="c-card-food__content--image">
+        
+        <div class="wrapper">
+            <span class="wrapper__title">{{ data.title }}</span>
+            <span class="wrapper__description">{{ data.description }}</span>
+
+            <div class="wrapper__price">
+                <span class="wrapper__price--value">{{ data.price | currency: 'BRL' }}</span>
+                <button class="o-button-solid wrapper__price--add" (click)="onSelect()">Adicionar ao carrinho</button>
+            </div>
+        </div>
+
+    </div>
+</div>

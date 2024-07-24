@@ -1,0 +1,53 @@
+<div class="c-home">
+    <div class="c-home__actions">
+        <input type="text" placeholder="Pesquise pelo nome do prato" class="c-home__actions--search" (keyup)="onFilterBySearch()" [(ngModel)]="searchValue">
+        <button class="c-home__actions--cart o-button-light" (click)="onCart()">Meu Carrinho</button>
+    </div>
+
+    <div class="c-home__list">
+        <ng-container *ngIf="listFiltered$.getValue().length > 0; then list; else emptyState"></ng-container>
+    </div>
+
+</div>
+
+<ng-template #list>
+    <ng-container *ngFor="let food of listFiltered$.getValue()">
+        <singu-card-food [data]="food" (event)="onSelectFood($event)"></singu-card-food>
+    </ng-container>
+</ng-template>
+
+<ng-template #emptyState>
+    <singu-empty-state [description]="'Nenhum item encontrado.'"></singu-empty-state>
+</ng-template>
+
+<singu-drawer [title]="'Carrinho'" (closed)="onCloseCart()" [opened]="openCart">
+    <div class="c-cart">
+
+        <div class="c-cart__header">
+            <button class="c-cart__header--clear o-button-link" (click)="onDeleteAllCarts()">Limpar carrinho</button>
+        </div>
+
+        <div class="c-cart__list">
+
+            <ng-container *ngIf="listCart.length > 0">
+                <ng-container *ngFor="let cart of listCart">
+                    <singu-cart-card [data]="cart" (event)="onDeleteItemFromCart($event)"></singu-cart-card>
+                </ng-container>
+            </ng-container>
+
+            <ng-container *ngIf="listCart.length <= 0">
+                <singu-empty-state [description]="'Nenhum item disponível.'"></singu-empty-state>
+            </ng-container>
+           
+        </div>
+
+
+        <div class="c-cart__footer">
+            <button class="c-cart__footer--action o-button-light" (click)="onCloseCart()">Cancelar</button>
+            <button class="c-cart__footer--action o-button-solid" (click)="onCreateOrder()">Enviar pedido</button>
+        </div>
+    </div>
+</singu-drawer>
+
+
+

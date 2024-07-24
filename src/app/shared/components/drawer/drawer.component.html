@@ -1,0 +1,13 @@
+<div class="c-drawer-overlay" [class.visible]="opened" (click)="closeDrawer()">
+    <div class="c-drawer" [class.visible]="opened" (click)="$event.stopPropagation()">
+
+        <div class="c-drawer__header">
+            <span class="c-drawer__header--title">{{ title }}</span>
+            <button class="c-drawer__header--close" (click)="closeDrawer()">&times;</button>
+        </div>
+        <div class="c-drawer__content">
+            <ng-content></ng-content>
+        </div>
+        
+    </div>
+</div>
